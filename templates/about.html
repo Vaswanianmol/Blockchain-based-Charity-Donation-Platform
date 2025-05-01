@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Transparent Donation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: #f5f5dc;
+            color: #3b3b3b;
+        }
+        .top-nav {
+            background-color: #8b5f3c;
+            /* Vintage color */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            transition: background-color 0.3s, opacity 0.3s;
+            /* Add transition for background-color and opacity */
+        }
+        .top-nav.translucent {
+            background-color: rgba(139, 95, 60, 0.8);
+            /* Translucent background color on scroll */
+            opacity: 0.9;
+            /* Reduce opacity on scroll */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0px;
+        }
+        .top-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .top-nav li {
+            margin: 0 10px;
+        }
+
+        .top-nav li.left-align {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            margin-left: 10px;
+        }
+        .top-nav li.left-align h3 {
+            font-size: 24px;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .top-nav li.left-align img {
+            max-width: 80px;
+            max-height: 60px;
+            padding-right: 6px;
+        }
+        .top-nav li.right-align {
+            margin-left: 0;
+            margin-right: 2px;
+        }
+        .top-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .top-nav ul li {
+            display: inline-block;
+        }
+        .top-nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .top-nav a:hover {
+            background-color: #000;
+        }
+        .top-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 50px;
+            padding: 0 10px;
+            transition: color 0.3s, background-color 0.3s;
+            /* Add background-color transition */
+            border-radius: 5%;
+            /* Make the background circular */
+        }
+        .top-nav a:hover {
+            color: #8b5f3c;
+            /* Vintage highlight color */
+            background-color: #583a21;
+            /* Circular background on hover */
+        }
+        .about-section {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: #fff8e7;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: #8b5f3c;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        .footer {
+            background-color: #8b5f3c;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar ul {
+                flex-direction: column;
+                gap: 0.75rem;
+                margin-top: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <ul>
+                <li class="left-align">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}"
+                        style="max-width: 80px; max-height: 80px; padding-right: 10px;" alt="QR Code">
+                    <h3>Transparent Donation System for NGOs </h3>
+                </li>
+                <li class="right-align"><a href="#">Home</a></li>
+                <li class="right-align"><a href="{{ url_for('about') }}">About</a></li>
+                <li class="right-align"><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>
+            The Transparent Donation System is built with the vision of promoting trust and efficiency in the charitable
+            ecosystem. We aim to bridge the gap between donors and NGOs through a platform that ensures every donation
+            reaches its intended destination transparently.
+        </p>
+        <p>
+            Our system allows donors to choose NGOs based on real-time data like availability, proximity, and donation
+            type preferences. By providing insightful recommendations and tracking features, we enhance both donor
+            confidence and NGO reach.
+        </p>
+        <p>
+            At our core, we believe in compassion, clarity, and community. This platform is not just about giving; it's
+            about building meaningful connections that create lasting change.
+        </p>
+    </section>
+
+    <footer class="footer">
+        &copy; 2025 Transparent Donation System for NGOs. All rights reserved.
+    </footer>
+</body>
+</html>
